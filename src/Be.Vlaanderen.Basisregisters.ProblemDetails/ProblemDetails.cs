@@ -5,12 +5,16 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
     using System.ComponentModel;
     using System.Reflection;
     using System.Runtime.Serialization;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>Implementation of Problem Details for HTTP APIs https://tools.ietf.org/html/rfc7807</summary>
     ///// <summary>A machine-readable format for specifying errors in HTTP API responses based on https://tools.ietf.org/html/rfc7807.</summary>
     [DataContract(Name = "ProblemDetails", Namespace = "")]
     public class ProblemDetails
     {
+
+        private string _title;
+
         public static string DefaultTitle { get; } = "Er heeft zich een fout voorgedaan!"; // TODO: Localize
 
         public static string GetProblemNumber() => $"{Guid.NewGuid():N}";
@@ -48,7 +52,15 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
         [JsonProperty("title", Required = Required.DisallowNull)]
         [DataMember(Name = "Title", Order = 200, EmitDefaultValue = false)]
         [Description("Korte omschrijving van het probleem.")]
-        public string Title { get; set; }
+        public string Title {
+            get
+            {
+                if (HttpStatus == StatusCodes.Status400BadRequest)
+                    return DefaultTitle;
+                return _title;
+            }
+            set => _title = value;
+        }
 
         /// <summary>Specifieke details voor dit probleem.</summary>
         ///// <summary>A human-readable explanation specific to this occurrence of the problem.</summary>
