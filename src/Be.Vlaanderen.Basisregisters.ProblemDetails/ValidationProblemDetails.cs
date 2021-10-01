@@ -60,6 +60,14 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
             ProblemTypeUri = GetTypeUriFor<ValidationException>();
         }
 
+        public ValidationProblemDetails(string customNameSpace) : base(StatusCodes.Status400BadRequest)
+        {
+            Title = DefaultTitle;
+            Detail = "Validatie mislukt!"; // TODO: Localize
+            ProblemInstanceUri = GetProblemNumber();
+            ProblemTypeUri = GetTypeUriFor<ValidationException>(customNameSpace);
+        }
+
         public ValidationProblemDetails(ValidationException exception) : this()
         {
             ValidationErrors = exception.Errors
