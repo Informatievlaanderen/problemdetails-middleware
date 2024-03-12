@@ -1,6 +1,7 @@
 namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
 {
     using System.Runtime.Serialization;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.WebUtilities;
 
     [DataContract(Name = "StatusCodeProblemDetails", Namespace = "")]
@@ -8,8 +9,8 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
     {
         public StatusCodeProblemDetails(int statusCode)
         {
-            HttpStatus = statusCode;
-            ProblemTypeUri = $"https://httpstatuses.com/{statusCode}";
+            Status = statusCode;
+            Type = $"https://httpstatuses.com/{statusCode}";
             Title = ReasonPhrases.GetReasonPhrase(statusCode);
         }
     }

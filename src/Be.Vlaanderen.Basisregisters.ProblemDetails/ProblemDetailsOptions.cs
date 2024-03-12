@@ -4,6 +4,7 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
     using Microsoft.Net.Http.Headers;
     using System;
     using System.Collections.Generic;
+    using Microsoft.AspNetCore.Mvc;
 
     public class ProblemDetailsOptions
     {
@@ -11,30 +12,30 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
 
         public Func<HttpContext, int, ProblemDetails> MapStatusCode { get; set; }
 
-        public Action<HttpContext, ProblemDetails> OnBeforeWriteDetails { get; set; }
-
-        public Func<HttpContext, Exception, ProblemDetails, bool> ShouldLogUnhandledException { get; set; }
-
-        public HashSet<string> AllowedHeaderNames { get; }
+        // public Action<HttpContext, ProblemDetails> OnBeforeWriteDetails { get; set; }
+        //
+        // public Func<HttpContext, Exception, ProblemDetails, bool> ShouldLogUnhandledException { get; set; }
+        //
+        // public HashSet<string> AllowedHeaderNames { get; }
 
         private List<ExceptionMapper> Mappers { get; }
 
         public ProblemDetailsOptions()
         {
             Mappers = new List<ExceptionMapper>();
-            AllowedHeaderNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-            {
-                HeaderNames.AccessControlAllowCredentials,
-                HeaderNames.AccessControlAllowHeaders,
-                HeaderNames.AccessControlAllowMethods,
-                HeaderNames.AccessControlAllowOrigin,
-                HeaderNames.AccessControlExposeHeaders,
-                HeaderNames.AccessControlMaxAge,
-
-                HeaderNames.StrictTransportSecurity,
-
-                HeaderNames.WWWAuthenticate,
-            };
+            // AllowedHeaderNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            // {
+            //     HeaderNames.AccessControlAllowCredentials,
+            //     HeaderNames.AccessControlAllowHeaders,
+            //     HeaderNames.AccessControlAllowMethods,
+            //     HeaderNames.AccessControlAllowOrigin,
+            //     HeaderNames.AccessControlExposeHeaders,
+            //     HeaderNames.AccessControlMaxAge,
+            //
+            //     HeaderNames.StrictTransportSecurity,
+            //
+            //     HeaderNames.WWWAuthenticate,
+            // };
         }
 
         public void Map<TException>(Func<TException, ProblemDetails> mapping) where TException : Exception

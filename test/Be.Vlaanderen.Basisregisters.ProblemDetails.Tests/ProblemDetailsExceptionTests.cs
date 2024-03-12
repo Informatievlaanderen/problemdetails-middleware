@@ -1,5 +1,6 @@
 namespace Be.Vlaanderen.Basisregisters.BasicApiProblem.Tests
 {
+    using Microsoft.AspNetCore.Mvc;
     using Xunit;
 
     public class ProblemDetailsExceptionTests
@@ -7,11 +8,11 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem.Tests
         private static ProblemDetails CreateProblemDetails()
             => new ProblemDetails
             {
-                ProblemTypeUri = "https://httpstatuses.com/303",
+                Type = "https://httpstatuses.com/303",
                 Title = "See other",
-                HttpStatus = 303,
+                Status = 303,
                 Detail = "Look somewhere else.",
-                ProblemInstanceUri = "https://example.com/problem/123",
+                Instance = "https://example.com/problem/123",
             };
 
         [Fact]

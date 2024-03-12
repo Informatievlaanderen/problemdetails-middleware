@@ -5,6 +5,7 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
     using System.Xml.Serialization;
     using FluentValidation;
     using FluentValidation.Results;
@@ -26,7 +27,8 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
         [Description("Uitgebreide omschrijving van de validatiefout(en).")]
         public Dictionary<string, Errors>? ValidationErrors { get; set; }
 
-        [JsonIgnore]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         [XmlElement("ValidationErrors")]
         [DataMember(Name = "ValidationErrors", Order = 600, EmitDefaultValue = false)]
         public ValidationErrorDetails? ValidationErrorsProxy
@@ -61,10 +63,10 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
         public ValidationProblemDetails()
             : base(StatusCodes.Status400BadRequest)
         {
-            Title = DefaultTitle;
+            Title = ProblemDetailsExtensions.DefaultTitle;
             Detail = "Validatie mislukt!"; // TODO: Localize
-            ProblemInstanceUri = GetProblemNumber();
-            ProblemTypeUri = GetTypeUriFor<ValidationException>();
+            Instance = ProblemDetailsExtensions.GetProblemNumber();
+            Type = ProblemDetailsExtensions.GetTypeUriFor<ValidationException>();
         }
 
         public ValidationProblemDetails(ValidationException exception) : this()
@@ -85,6 +87,7 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
         /// Unieke code die de validatiefout beschrijft.
         /// </summary>
         [DataMember(Name = "Code", EmitDefaultValue = false)]
+        [System.Text.Json.Serialization.JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Code { get; set; }
 
         /// <summary>

@@ -7,8 +7,8 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
     {
         public void Configure(ProblemDetailsOptions options)
         {
-            if (options.ShouldLogUnhandledException == null)
-                options.ShouldLogUnhandledException = (ctx, e, d) => IsServerError(d.HttpStatus);
+            // if (options.ShouldLogUnhandledException == null)
+            //     options.ShouldLogUnhandledException = (ctx, e, d) => IsServerError(d.Status);
 
             if (options.MapStatusCode == null)
                 options.MapStatusCode = (ctx, statusCode) => new StatusCodeProblemDetails(statusCode);
@@ -18,8 +18,8 @@ namespace Be.Vlaanderen.Basisregisters.BasicApiProblem
         }
 
         // Err on the side of caution and treat missing status code as server error.
-        private static bool IsServerError(int? statusCode)
-            => !statusCode.HasValue || statusCode.Value >= 500;
+        // private static bool IsServerError(int? statusCode)
+        //     => !statusCode.HasValue || statusCode.Value >= 500;
 
         private static bool IsProblem(HttpContext context)
         {
