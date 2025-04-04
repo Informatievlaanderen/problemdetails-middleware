@@ -1,3 +1,15 @@
+# [10.0.0](https://github.com/informatievlaanderen/problemdetails-middleware/compare/v9.0.0...v10.0.0) (2025-04-04)
+
+
+### Code Refactoring
+
+* use renovate and nuget + update pipeline ([5ebab4e](https://github.com/informatievlaanderen/problemdetails-middleware/commit/5ebab4ea756a521e913150480d907905434bef44))
+
+
+### BREAKING CHANGES
+
+* update to dotnet 9
+
 # [9.0.0](https://github.com/informatievlaanderen/problemdetails-middleware/compare/v8.0.6...v9.0.0) (2024-03-07)
 
 
