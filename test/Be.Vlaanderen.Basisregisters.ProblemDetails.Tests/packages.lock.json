@@ -4,20 +4,20 @@
     "net9.0": {
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
         "type": "Direct",
-        "requested": "[9.0.3, )",
-        "resolved": "9.0.3",
-        "contentHash": "Y+385Psr6e/nJkjf80DfUVDA6VZ5c1YzGEFN6UOYPOu2P3QEUZR+7IANIEcJguYCvwtTPo27p7XH6G2xm74U5g==",
+        "requested": "[9.0.16, )",
+        "resolved": "9.0.16",
+        "contentHash": "ZmVOJDmKDqkMaMN9z17MPOxok3WGS/c8uBEKYwtQvElvyFm3zV8w4gURi9EMpdmyRU/h471wPi5kkehWwUpnCw==",
         "dependencies": {
-          "Microsoft.AspNetCore.JsonPatch": "9.0.3",
+          "Microsoft.AspNetCore.JsonPatch": "9.0.16",
           "Newtonsoft.Json": "13.0.3",
           "Newtonsoft.Json.Bson": "1.0.2"
         }
       },
       "Microsoft.AspNetCore.TestHost": {
         "type": "Direct",
-        "requested": "[9.0.3, )",
-        "resolved": "9.0.3",
-        "contentHash": "06xvAzCx23chCktc71n31V/+dj3uipkeC+odLn35JYgmxAKqP2/cTsx0jwqwPT5eRPGiTcTvPc5H7ad60RCZNQ=="
+        "requested": "[9.0.16, )",
+        "resolved": "9.0.16",
+        "contentHash": "b57L8gFplki+q8HL8hP9f0XKbuWwBJATVwoR6YvDJSlIUtIuhWQJhDzjX6wMbEBapwhD6bP7PmkwTj4nu8UMKg=="
       },
       "Microsoft.NET.Test.Sdk": {
         "type": "Direct",
@@ -62,8 +62,8 @@
       },
       "Microsoft.AspNetCore.JsonPatch": {
         "type": "Transitive",
-        "resolved": "9.0.3",
-        "contentHash": "G4l8/XY06y6TYhQPAaDhlbEnc3aP8obYmQAv0WYQOKhXD6t8J0YKyS1TW0v3RteVDN6XsUten3BfqlvDF7Gxhg==",
+        "resolved": "9.0.16",
+        "contentHash": "SSoUYqlzHk/c7yIg+373TnZRQ/AEbOJn7KCOyz0KrslR+Nj9SX0biBuhqu2TBNM2A/8QJtL5wWr7kEq9SHJ2eA==",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "13.0.3"
@@ -154,7 +154,7 @@
         "dependencies": {
           "FluentValidation.AspNetCore": "[11.3.0, )",
           "Newtonsoft.Json": "[13.0.3, )",
-          "System.Reflection.Metadata": "[9.0.3, )"
+          "System.Reflection.Metadata": "[9.0.16, )"
         }
       },
       "FluentValidation.AspNetCore": {
@@ -175,9 +175,9 @@
       },
       "System.Reflection.Metadata": {
         "type": "CentralTransitive",
-        "requested": "[9.0.3, )",
-        "resolved": "9.0.3",
-        "contentHash": "7oYePO1JGlCPxOzawf8nkn80eYYboQaB4FvBWDPEvOzVHZVf96tdgbgq8LHSBrkeQoLRivx7+YhTCtirdQ386g=="
+        "requested": "[9.0.16, )",
+        "resolved": "9.0.16",
+        "contentHash": "tQCgG47DHO8lby3qZIdl9js6gBiSte5Lr1F9Hks/G8B1bODnZB+KJAP/3ZKIphBALOZ7Igph7CPRPmdgSJKKhg=="
       }
     },
     "net9.0/linux-x64": {},
