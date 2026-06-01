@@ -1,3 +1,10 @@
+# [10.1.0](https://github.com/informatievlaanderen/problemdetails-middleware/compare/v10.0.0...v10.1.0) (2026-06-01)
+
+
+### Features
+
+* update packages ([6b9cb9a](https://github.com/informatievlaanderen/problemdetails-middleware/commit/6b9cb9aabb38c7869a8ad70775a6972a3455db26))
+
 # [10.0.0](https://github.com/informatievlaanderen/problemdetails-middleware/compare/v9.0.0...v10.0.0) (2025-04-04)
 
 
