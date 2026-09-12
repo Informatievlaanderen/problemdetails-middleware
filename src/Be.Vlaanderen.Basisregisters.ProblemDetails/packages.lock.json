@@ -32,9 +32,9 @@
       },
       "System.Reflection.Metadata": {
         "type": "Direct",
-        "requested": "[10.0.8, )",
-        "resolved": "10.0.8",
-        "contentHash": "Ap8JPUYLRnwQPk/rpyhxSoD+55/a7zJfZsmSD0maudVJT9p/xR+xegyT8gQIwh1XMC/lRowQJM06EdQ0dfiMkA=="
+        "requested": "[10.0.12, )",
+        "resolved": "10.0.12",
+        "contentHash": "GvhJ5dVmJAw89wCWCyHXaU4A9iZjUtAW/ucshV6EpDW3l7VD8zHSWO14SHVD3m3jSuSE+FcNTrQFquJSQqJVVA=="
       },
       "FluentValidation": {
         "type": "Transitive",
